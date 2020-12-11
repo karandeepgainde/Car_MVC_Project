@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Car_MVC_Project.Models.Buy>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Customer_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Staff.Staff_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.Car_Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- FEATURES -->
+<div id="features">
+    <div class="line">
+        <div class="margin">
+            <div class="s-12 m-6 l-3 margin-bottom">
+                <i class="icon-tablet icon3x"></i>
+                <h2>Get Inusrance</h2>
+                <p>Protect Yourself and Others – The right car insurance can help protect you, your family members, your passengers and other drivers.</p>
+            </div>
+            <div class="s-12 m-6 l-3 margin-bottom">
+                <i class="icon-isight icon3x"></i>
+                <h2>Import Cars</h2>
+                <p>Motor vehicles can be imported free of duty and tax (GST).</p>
+            </div>
+            <div class="s-12 m-6 l-3 margin-bottom">
+                <i class="icon-star icon3x"></i>
+                <h2>Warranty</h2>
+                <p>Factory warranties can save you money on mechanical repairs.</p>
+            </div>
+            <div class="s-12 m-6 l-3 margin-bottom">
+                <i class="icon-heart icon3x"></i>
+                <h2>Get free Services</h2>
+                <p>The right level of service for your vehicle with the latest equipment and our car services are up to 36% cheaper*.</p>
+            </div>
+        </div>
+    </div>
+</div>

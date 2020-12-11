@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Car_MVC_Project.Models.Car>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car_Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car_Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car_Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car_Price)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!--Page Details-->
+<div id="latest-news">
+    <div class="line">
+        <h2 class="section-title">Latest Cars</h2>
+        <div class="margin">
+            <div class="s-12 m-6 l-6">
+                <div class="s-12 l-2">
+                    <div class="news-date">
+                        <p>Ford</p><p>Mustang</p><p class="year">2020</p>
+                    </div>
+                </div>
+                <div class="s-12 l-10">
+                    <div class="news-text">
+                        <h4>mach 1</h4>
+                        <p>The Ford Mustang has athletic styling, a powerful range of engines, 10 speed automatic transmission or 6 speed manual, Apple Carplay & Android.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="s-12 m-6 l-6">
+                <div class="s-12 l-2">
+                    <div class="news-date">
+                        <p>Dodge</p><p>Challanger</p><p class="year">2020</p>
+                    </div>
+                </div>
+                <div class="s-12 l-10">
+                    <div class="news-text">
+                        <h4>SRT Hellcat Red-Eye</h4>
+                        <p>The Challenger SRT® Hellcat Redeye draws its anger from a Supercharged 6.2L high-output HEMI® SRT® Hellcat Redeye V8 engine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
